@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Header from "../Header";
 
-const BaseLayout: React.FC = ({ children }) => {
+const BaseLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen antialiased bg-white">
       <Header />

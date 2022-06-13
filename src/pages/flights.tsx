@@ -25,10 +25,9 @@ const FlightsPage: ExtendedNextPage = () => {
     setLoading(true);
     e.preventDefault();
     try {
-      console.log({ to, from });
       const { data } = await apiCall("flights", {
         to: to?.IATA,
-        from: from.IATA,
+        from: from?.IATA,
         type: type.value,
         noOfTickets
       });
@@ -62,6 +61,7 @@ const FlightsPage: ExtendedNextPage = () => {
                 //@ts-ignore
                 `${option["IATA"]} | ${option["Name"]}, ${option["Country"]}`
               }
+              //@ts-ignore
               components={{ MenuList: CustomList }}
               theme={(theme) => ({
                 ...theme,
@@ -85,6 +85,7 @@ const FlightsPage: ExtendedNextPage = () => {
                 //@ts-ignore
                 `${option["IATA"]} | ${option["Name"]}, ${option["Country"]}`
               }
+              //@ts-ignore
               components={{ MenuList: CustomList }}
               theme={(theme) => ({
                 ...theme,
